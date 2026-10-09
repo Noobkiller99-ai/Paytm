@@ -1,0 +1,186 @@
+"""Shared text content used by both the deck and the annexure workbook."""
+
+ACCESS_DATE = "9 Oct 2026"
+
+# (id, source, url, used for, verification status)
+SOURCES = [
+    ("S1", "Paytm Q1 FY27 results release (Paytm investor relations blog)",
+     "https://paytm.com/blog/investor-relations/paytm-q1-fy27-results-revenue-grows-28-to-2448-crore-highest-ever-quarterly-ebitda-at-203-crore/",
+     "1.57 crore merchants paying for Paytm payment devices (quarter to June 2026)",
+     "Verified via web search, 9 Oct 2026"),
+    ("S2", "NPCI UPI app-wise statistics, August 2026 (reported by StartupTalky)",
+     "https://startuptalky.com/upi-transactions-september-2026/",
+     "App-wise UPI volume share: Paytm 8.03%, PhonePe 45.64%, Google Pay 32.26% (value: 6.87% / 47.82% / 33.78%)",
+     "Secondary report of NPCI data; confirm on npci.org.in before submission"),
+    ("S3", "Paytm for Business app listing (App Store copy; Google Play com.paytm.business)",
+     "https://apps.apple.com/in/app/id1351301966 ; https://play.google.com/store/apps/details?id=com.paytm.business",
+     "'Instant Bank Settlements: select the frequency of the settlements or manually settle'; acceptance, statements, settlements, loans; no vendor-payment feature listed",
+     "Listing text verified via App Store / APK mirror copy; Play page not reachable from build environment"),
+    ("S4", "Paytm for Business support: how Paytm transfers payments to your bank",
+     "https://paytm.business/support/how-does-paytm-transfer-payments-i-have-received-to-my-bank-account",
+     "'Usually settled to your bank within T+1 days ... may get extended due to bank holidays'",
+     "Verified via web search snippet, 9 Oct 2026"),
+    ("S5", "Paytm Payments developer docs: settlement processing",
+     "https://www.paytmpayments.com/docs/settlement-processing-in-paytm",
+     "'Typically occurs within a few business hours or at the T+N cycle'",
+     "Verified via web search snippet, 9 Oct 2026"),
+    ("S6", "PhonePe merchant help: charges for a Settle Now request",
+     "https://cms.phonepe.com/en/mx/merchant-help/settlements/know-more-about-settlements/about-early-settlements/are-there-any-charges-raising-early-settlement-request",
+     "₹1 (₹1–999), ₹2 (₹1,000–24,999), ₹3 (₹25,000–5 lakh) per request, incl. GST; deducted from next settlement",
+     "Verified via web search, 9 Oct 2026"),
+    ("S7", "PhonePe merchant help: why can't I place a Settle Now request",
+     "https://cms.phonepe.com/en/mx/merchant-help/on-demand-or-early-settlement/why-am-i-not-able-place-settle-now-request",
+     "One request an hour until 11 pm; only selected merchants are eligible",
+     "Verified via web search, 9 Oct 2026"),
+    ("S8", "PhonePe merchant help: settlement time",
+     "https://cms.phonepe.com/en/mx/merchant-help/settlements/can-i-change-settlement-time/",
+     "Merchants settled by 8 am the next day",
+     "Cited in team solution document; not re-verified"),
+    ("S9", "RBI press release: Regulation of Payment Aggregators Directions, 2025 (15 Sep 2025)",
+     "https://website.rbi.org.in/web/rbi/-/press-releases/rbi-issues-the-reserve-bank-of-india-regulation-of-payment-aggregators-directions-2025",
+     "Directions issued and effective; supersede 2020/2021 PA-PG guidelines",
+     "Verified via web search; payout clause read from legal summaries, primary text to be confirmed"),
+    ("S10", "Vinod Kothari Consultants: key highlights of PA Directions 2025",
+     "https://vinodkothari.com/wp-content/uploads/2025/09/Key-Highlights-of-PA-2025-2.pdf",
+     "Third-party payouts only for merchants with turnover above ₹40 lakh, to the payee in the underlying transaction; settlement timeline mutually agreed (T+1 suggestion removed)",
+     "Legal summary, verified via web search, 9 Oct 2026"),
+    ("S11", "Cyril Amarchand Mangaldas client alert on PA Directions 2025",
+     "https://www.cyrilshroff.com/wp-content/uploads/2025/10/Client-Alert-RBI-Introduces-Consolidated-Framework-for-Payment-Aggregators-3.pdf",
+     "Payment to a third party on merchant directions allowed only for certain merchants",
+     "Legal summary, verified via web search, 9 Oct 2026"),
+    ("S12", "AZB & Partners summary of PA Directions 2025",
+     "https://www.azbpartners.com/bank/rbi-issues-consolidated-reserve-bank-of-india-regulation-of-payment-aggregators-directions-2025/",
+     "Settlement timing by merchant agreement; payout restriction",
+     "Cited in team solution document"),
+    ("S13", "Business Today (Nov 2018): Paytm launches Instant Bank Settlement",
+     "https://www.businesstoday.in/technology/story/paytm-launches-instant-bank-settlement-for-its-merchant-partners-114887-2018-11-29",
+     "Instant / on-demand settlement for offline merchants since 2018",
+     "Verified via web search, 9 Oct 2026"),
+    ("S14", "Paytm blog: is UPI available for current accounts?",
+     "https://paytm.com/blog/payments/upi/is-upi-available-for-current-accounts-everything-you-need-to-know/",
+     "UPI works with current accounts within bank and NPCI limits",
+     "Cited in team solution document"),
+    ("S15", "VJM Global and MediaNama summaries of PA rules (pre-funding)",
+     "https://www.vjmglobal.com/blog/payment-aggregators-and-payment-gateways-guidelines-on-settlement-and-escrow-account-management-and-other-instructions ; https://www.medianama.com/2025/09/223-explained-rbi-master-direction-payment-aggregators/",
+     "2020 rules allowed PA pre-funding; 2025 summaries silent on whether pre-funded early settlement is lending",
+     "Cited in team solution document"),
+    ("S16", "Paytm_Track_B_VOCs.xlsx (team workbook)", "Internal file",
+     "50-row synthetic VOC dataset for hypothesis stress-testing",
+     "SYNTHETIC: not field research"),
+    ("S17", "Paytitude_ExecSummary.pdf (Round 1 submission, 25 Sep 2026)", "Internal file",
+     "Round 1 segment, solution, impact and pilot, for the change log",
+     "Read in full"),
+]
+
+# (area, Round 1 (verified against Paytitude_ExecSummary.pdf), Round 2, why)
+CHANGE_LOG = [
+    ("Problem framing",
+     "'Paytm owns the counter, not the payout'; the 0.4% MDR from 15 Oct 2026 would push supplier payments to NEFT and cash",
+     "Paytm owns the moment money arrives, not the moment it is spent; no MDR argument",
+     "The fee is not why merchants choose an app, and the MDR argument was legally fragile"),
+    ("Segment",
+     "Paytm QR / Soundbox merchants collecting over ₹1 lakh a month on UPI (≈24 lakh), starting in Andheri trade clusters",
+     "Same track and base (Paytm-collecting merchants who pay suppliers by UPI), re-cut by behaviour: next-day or separate-account settlement, weekly vendor UPI, a stated friction",
+     "That is where removing a step gives a reason to switch; settlement profile, not size, separated interested from indifferent merchants in the stress-test data"),
+    ("Solution",
+     "Supplier Pay: four layers (pay from settlement account; invoice-matched receipts and distributor ledger; due-date payments with partner credit; Supplier Khata)",
+     "Settle & Pay: one flow that settles already-received collections to the merchant's own account, then pays the supplier by UPI; free when it funds a supplier payment",
+     "Settlement plus payment in one flow is the Paytm-specific edge"),
+    ("Credit",
+     "30-day partner-lender credit; break-even at ≈18% supplier credit cost",
+     "Dropped",
+     "No credit need in the evidence; economics were thin"),
+    ("Ledger and invoices",
+     "Supplier Khata, GST and Tally export; invoice-matched receipts",
+     "Dropped from the MVP",
+     "Billing software already owns this"),
+    ("Impact estimate",
+     "≈₹27,000 crore a year extra GMV (24 lakh × ₹1 lakh × +11 pts, less 13% leakage); +1–2 lakh new merchant payers",
+     "Staged funnel: base ₹2,660 crore annual run-rate (₹240–19,400 crore); ≈78,000 incremental MTU",
+     "The ₹27,000 crore rested on simulated data and planned supplier payments"),
+    ("Pilot",
+     "500 Andheri merchants vs control, before Diwali; month-12 target 30% outflow share",
+     "90-day pilot randomised by field-agent territory, ≈3,000 vs 3,000 in two cities; intention-to-treat share target +4 to +6 pts; scale / revise / stop gates",
+     "To prove incrementality before scale"),
+    ("Evidence base",
+     "Summary cited 'VOC dataset, n=50 Andheri merchants'",
+     "Segment proxies come from a 50-row dataset disclosed as synthetic (hypothesis stress-testing only); ≥20-user validation added (results pending)",
+     "Keeps hypothesis and evidence visibly separate"),
+]
+
+PILOT = [
+    ("Days 0–14", "Pull settlement data; build the eligible list (next-day or separate-account settlement; vendor-payment pattern where visible); randomise by field-agent territory; pull a 60-day baseline from Paytm data; recruit the Account Aggregator share panel; ship the light build (S): collections-screen prompt, existing instant settlement with a fee waiver when it funds a supplier payment, hand-off to Paytm UPI with the supplier prefilled"),
+    ("Days 15–90", "Live for treatment. Arm A: Settle & Pay (light build) for all treatment merchants. Arm B: plus staff access for multi-payer shops. Field activation visits during days 15–30"),
+    ("Cohort and control", "≈3,000 treatment and ≈3,000 control merchants in two cities with dense Soundbox coverage; control gets no prompt and no fee waiver"),
+    ("Baseline", "60-day pre-period outgoing Paytm payments from Paytm data; Account Aggregator bank-statement panel of ≈300 consented merchants per arm for total business UPI"),
+    ("Main metric", "Intention-to-treat change in Paytm's share of business UPI value, treatment vs control (difference-in-differences); target +4 to +6 pts"),
+    ("Early indicators", "Activation within 30 days (15–25%); repeat: 2+ payments in each of months 2 and 3 (50%); 6–8 payments per repeat merchant a month; habit guard ≥30%; ≈65 incremental MTU per 1,000 exposed"),
+    ("Durability", "(a) repeat after field contact ends, days 31–90; (b) habit-guard share; (c) optional sub-arm: free settlement reverts to standard pricing, days 61–90"),
+    ("Safety", "Wrong-payee payments and support complaints per 1,000 payments: near zero (commitment)"),
+    ("Scale if", "Activation ≥15%, repeat ≥40% and a statistically significant intention-to-treat share lift"),
+    ("Revise if", "Activation fine but habit guard <15% (used only for settlement gaps)"),
+    ("Stop if", "Activation <8%"),
+    ("How to scale", "Build the full in-app payer flow (M/L); extend to all eligible merchants found through settlement data; Soundbox field-force waves by city; WhatsApp and in-app messaging; settlement-bank partnerships for current-account payers"),
+]
+
+# (mechanic, public indication, open question, owner, effort)
+DEPENDENCIES = [
+    ("Releasing today's collections early", "Paytm for Business already offers manual instant settlement; PhonePe offers Settle Now; RBI 2025 rules let the merchant agreement set settlement timing (S3, S6, S10)", "Credit speed to each partner bank; daily limits; whether merchant agreements need updating", "Settlement, treasury, compliance", "S"),
+    ("Paying the supplier directly from collections", "Not allowed for most target merchants: third-party payouts need ₹40 lakh+ turnover and must go to the customer-facing payee (S10, S11)", "None: the design settles to the merchant's own account first; compliance to confirm the reading", "Compliance", "—"),
+    ("Early release versus credit", "Settling only collections already received avoids pre-funding; summaries of 2025 rules don't classify pre-funded early settlement (S15)", "Formal compliance view; whether any pre-funding is ever needed", "Compliance, legal", "—"),
+    ("One authorisation", "Settlement needs no UPI PIN; only the supplier payment does", "Settlement-to-credit time by bank; the waiting experience", "Payments engineering", "M"),
+    ("Paying from Paytm for Business", "UPI works on current accounts (S14); the app lists no payer feature today (S3)", "Build the payer flow in-app, or keep the hand-off to Paytm UPI", "Engineering, partner banks", "S hand-off / M–L in-app"),
+    ("Free settlement when it funds a supplier", "Competitor charges ₹1–3 a request, implying low unit cost (S6)", "Whether conditional free pricing is acceptable; cost at scale", "Compliance, pricing", "S"),
+    ("Staff access (arm B)", "Not researched publicly", "Whether UPI delegated-payment limits fit vendor payments, or an approval workflow is needed", "Product, NPCI rules", "M"),
+    ("Manual instant settlement for all device merchants (Phase 0)", "Feature exists in the app (S3); coverage across device merchants not public", "Is it available to every eligible device merchant today?", "Merchant product", "S"),
+    ("Segment size", "Not public; Paytm help pages give different timings (S4, S5)", "Share of device merchants on next-day or separate-account settlement; share already using manual settlement", "Data team", "S"),
+]
+
+# (risk, signal, mitigation)
+RISKS = [
+    ("Most Paytm merchants already settle same day into the account they pay from", "Settlement data shows a small next-day / separate-account share", "Size it in days 0–14 before launch; shrink the target; lead with staff access for multi-payer shops"),
+    ("Habit wins even with the step removed", "Low habit-guard share; activation without repeat", "Morning prompt on yesterday's collections; target Group 1 only; 'revise' gate if habit guard <15%"),
+    ("PhonePe responds", "Adds supplier payment to Settle Now, or makes it free, for its own merchants", "Expected within months; it can't reach merchants whose collections Paytm handles; move first and lock in the habit"),
+    ("The friction is already solved", "Many eligible merchants already use manual instant settlement", "Phase 0 measures it first; lead with one flow instead of two apps, and with staff access"),
+    ("Compliance treats free conditional settlement or early release differently", "Compliance opinion before pilot", "Settle only already-received collections; fallback: standard-priced settlement plus hand-off"),
+    ("Early-release cost", "≈₹0.75 of float per ₹2,500 payment settled a day early (ceiling)", "Justify against measured retention and GMV lift; settle exact amounts only"),
+    ("Trust in Paytm after 2024", "Drop-off at the payment screen", "Show the source bank account on every payment screen; money never sits with Paytm"),
+    ("Dataset limitations", "Synthetic data; 11 contradictory rows; repeated quotes", "All proxy rates replaced by Paytm data and pilot results before any scale decision"),
+]
+
+CONTRADICTORY = ["V10", "V11", "V12", "V17", "V19", "V23", "V34", "V35", "V36", "V40", "V42"]
+GROUPS = {
+    "Group 1": "V07 V09 V14 V16 V20 V24 V25 V29 V32 V33 V43 V44 V45 V47 V49 V50".split(),
+    "Group 2": "V02 V04 V08 V37 V38 V41 V46 V10 V11 V12 V17 V19 V21 V30 V35 V36".split(),
+}
+QUADRANT = {
+    "Next-day/separate + friction": GROUPS["Group 1"],
+    "Next-day/separate + no friction": "V02 V04 V08 V37 V38 V41 V46".split(),
+    "Same-day + friction": "V10 V11 V12 V17 V19 V21 V30 V35 V36".split(),
+    "Same-day + no friction": "V01 V03 V05 V06 V22 V28 V34 V42".split(),
+    "Excluded: accountant chooses app": "V18 V27".split(),
+    "Excluded: no or partial Paytm collection": "V13 V15 V23 V26 V31 V39 V40 V48".split(),
+}
+
+REAL_CONVERSATIONS = ["Pharmacy", "Café", "FMCG retailer", "Tractor dealer",
+                      "Merchant who pays vendors by UPI routinely"]
+
+SYNTHETIC_DISCLOSURE = [
+    "This is synthetic research for hypothesis stress-testing, not customer evidence.",
+    "The set intentionally includes positive, ambiguous and negative cases.",
+    "Paytm collection usage, settlement timing, payment account, app choice and willingness to switch are not perfectly correlated.",
+    "Business Pay is tested against alternative explanations: habit, staff control, accounting, verification, supplier rail and trust.",
+    "Credit is deliberately not positioned as the default solution.",
+]
+
+INTERVIEW_GUIDE = [
+    ("Screener (all must be true)", "Owner or person who chooses the payment app; collects through a Paytm QR or Soundbox; pays at least one vendor by UPI every week; record settlement profile (same day / next day / separate current account)"),
+    ("1. Last five vendor payments (observed)", "Open the phone's UPI history together: app used, amount, payee, time, which account paid. Record, don't ask for estimates"),
+    ("2. Settlement reality", "'When did yesterday's Paytm collections reach your bank?' 'Have you ever settled instantly in Paytm for Business?' (Y/N, last 30 days)"),
+    ("3. Friction moment", "'Last time a supplier had to be paid before your money was usable, what did you do?' Record date and workaround"),
+    ("4. Prototype task (observed)", "Hand over the clickable concept: 'Pay Sharma Traders ₹6,800 from today's collections.' Record unaided completion Y/N, time, errors, hesitation points"),
+    ("5. Choice on real payments", "Show the last five payments: 'Which of these would you make with Settle & Pay?' Count of five"),
+    ("6. Commitment asks (behavioural)", "(a) Name a specific upcoming supplier payment you would move; (b) agree to a follow-up trial call in 7 days; (c) enable instant settlement now in the live app. Record each Y/N"),
+    ("7. Objections", "'What would stop you using this tomorrow?' Code into: trust, habit, supplier preference, staff, account set-up, other"),
+    ("Recording rules", "Mark every answer observed or stated; no incentives tied to answers; anonymise names; one row per merchant in Validation_Log"),
+]
